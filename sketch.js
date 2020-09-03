@@ -57,7 +57,7 @@ function setup() {
   box9 = new BoxClass(800,320,35,50)
 
 
- slingShot = new SlingShot(polygon.body,{x:100,y:200});
+ slingShot = new SlingShot(bodyA,{x:100,y:200});
 
   Engine.run(engine);
 }
@@ -97,5 +97,8 @@ function draw() {
   drawSprites();
 }
 function mouseDragged(){
-  Matter.Body.setPosition(polygon.body, {x: mouseX , y: mouseY});
+  Matter.Body.setPosition(bodyA, {x: mouseX , y: mouseY});
+}
+function mouseReleased(){
+  slingshot.fly();
 }
