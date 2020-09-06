@@ -23,7 +23,7 @@ function setup() {
 	engine = Engine.create();
   world = engine.world;
   
-  polygon = Bodies.circle(100,100,10);
+  polygon = Bodies.circle(100,700,10);
   World.add(world,polygon);
   
   
@@ -57,7 +57,7 @@ function setup() {
   box9 = new BoxClass(800,320,35,50)
 
 
- slingShot = new SlingShot(bodyA,{x:100,y:200});
+ slingShot = new SlingShot(polygon,{x:100,y:700});
 
   Engine.run(engine);
 }
@@ -92,13 +92,13 @@ function draw() {
   box7.display();
   box8.display();
   box9.display();
-  polygon.display();
 
+  image(polygonImg,polygon.position.x,polygon.position.x,50,50)
   drawSprites();
 }
 function mouseDragged(){
-  Matter.Body.setPosition(bodyA, {x: mouseX , y: mouseY});
+  Matter.Body.setPosition(polygon,{x: mouseX , y: mouseY});
 }
 function mouseReleased(){
-  slingshot.fly();
+  slingShot.fly();
 }
