@@ -17,13 +17,13 @@ function preload(){
 }
 
 function setup() {
-  var canvas = createCanvas(1200,700);
+  var canvas = createCanvas(1200,1000);
 
   
 	engine = Engine.create();
   world = engine.world;
   
-  polygon = Bodies.circle(100,700,10);
+  polygon = Bodies.circle(100,400,25);
   World.add(world,polygon);
   
   
@@ -57,7 +57,7 @@ function setup() {
   box9 = new BoxClass(800,320,35,50)
 
 
- slingShot = new SlingShot(polygon,{x:100,y:700});
+ slingShot = new SlingShot(polygon,{x:100,y:400});
 
   Engine.run(engine);
 }
@@ -93,7 +93,7 @@ function draw() {
   box8.display();
   box9.display();
 
-  image(polygonImg,polygon.position.x,polygon.position.x,50,50)
+  image(polygonImg,polygon.position.x,polygon.position.y,50,50)
   drawSprites();
 }
 function mouseDragged(){
