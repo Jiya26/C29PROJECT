@@ -57,7 +57,7 @@ function setup() {
   box9 = new BoxClass(800,320,35,50)
 
 
- slingShot = new SlingShot(polygon,{x:100,y:400});
+ slingShot = new SlingShot(polygon,{x:100,y:350});
   Engine.run(engine);
 }
 
@@ -91,6 +91,7 @@ function draw() {
   box7.display();
   box8.display();
   box9.display();
+  slingShot.display();
 
   image(polygonImg,polygon.position.x,polygon.position.y,50,50)
   drawSprites();
